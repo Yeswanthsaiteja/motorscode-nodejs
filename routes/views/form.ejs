@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        h2 {
+            background-color: DodgerBlue;
+            color: white;
+            padding: 10px;
+        }
+        label {
+            font-weight: bold;
+        }
+        .button {
+            background-color: DodgerBlue;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        select {
+            width: 200px; /* Adjust the width as needed */
+            height: 30px; /* Adjust the height as needed */
+        }
+    </style>
+</head>
+<body>
+    <h2>Task Library Display</h2>
+    <form method="POST">
+        <label for="tasks">List of tasks created thus far:</label><br>
+        <select name="tasks" id="tasks">
+            <% if (taskNames && taskNames.length > 0) {
+                taskNames.forEach(function(taskName) { %>
+                    <option><%= taskName %></option>
+                <% });
+            } %>
+        </select>
+        <br>
+        <h2>Operation Interface</h2>
+        <button type="submit" name="action" value="delete" class="button">Delete Task</button>
+        <button type="submit" name="action" value="modify" class="button">Modify Task</button>
+        <button type="submit" name="action" value="execute" class="button">Execute Task</button>
+    </form>
+</body>
+</html>

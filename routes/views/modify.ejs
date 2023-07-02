@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        h2 {
+            background-color: DodgerBlue;
+            color: white;
+            padding: 10px;
+        }
+
+        table {
+            width: 400px;
+            margin: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ccc;
+        }
+
+        input[type="text"] {
+            width: 200px;
+        }
+
+        .button {
+            background-color: DodgerBlue;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .error {
+            color: red;
+            font-size: 12px;
+            padding-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Modify Task:</h2>
+    <table>
+        <form method="POST" action="/modify">
+            <tr>
+                <th><label for="X">X-Motor:</label></th>
+                <td><input type="text" name="X" value="<%= taskData['X-Motor'] %>"></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <% if (errors && errors['X']) { %>
+                        <span class="error">Enter absolute values only.</span>
+                    <% } %>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="Y">Y-Motor:</label></th>
+                <td><input type="text" name="Y" value="<%= taskData['Y-Motor'] %>"></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <% if (errors && errors['Y']) { %>
+                        <span class="error">Enter absolute values only.</span>
+                    <% } %>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="Base">Base-Motor:</label></th>
+                <td><input type="text" name="Base" value="<%= taskData['Base-Motor'] %>"></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <% if (errors && errors['Base']) { %>
+                        <span class="error">Enter absolute values only.</span>
+                    <% } %>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="Arm1">Arm1-Motor:</label></th>
+                <td><input type="text" name="Arm1" value="<%= taskData['Arm1-Motor'] %>"></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <% if (errors && errors['Arm1']) { %>
+                        <span class="error">Enter absolute values only.</span>
+                    <% } %>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="Arm2">Arm2-Motor:</label></th>
+                <td><input type="text" name="Arm2" value="<%= taskData['Arm2-Motor'] %>"></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <% if (errors && errors['Arm2']) { %>
+                        <span class="error">Enter absolute values only.</span>
+                    <% } %>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="Tool">Tool-Motor:</label></th>
+                <td><input type="text" name="Tool" value="<%= taskData['Tool-Motor'] %>"></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <% if (errors && errors['Tool']) { %>
+                        <span class="error">Enter absolute values only.</span>
+                    <% } %>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="newTaskName">Task Name:</label></th>
+                <td><input type="text" name="newTaskName" value="<%= taskData.TaskName %>"></td>
+            </tr>
+            <tr>
+                <td><td><input type="hidden" name="taskName" value="<%= taskData.TaskName %>"></td></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" name="save" class="button" value="Save Changes">
+                </td>
+            </tr>
+        </form>
+    </table>
+</body>
+</html>

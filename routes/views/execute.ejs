@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Execute Task</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+    <h1>Execute Task</h1>
+
+<% if (taskData) { %>
+  <% const row = taskData.row; %>
+
+  <h2 style="background-color: DodgerBlue; padding: 10px; color: white;">For X-Motor:</h2>
+  <p>Original Position: <%= previous.previousx %></p>
+  <p>New Position: <%= taskData['X-Motor'] %></p>
+  <p>Task Name: <%= taskData.TaskName %></p>
+  <br>
+
+  <h2 style="background-color: DodgerBlue; padding: 10px; color: white;">For Y-Motor:</h2>
+  <p>Original Position: <%= previous.previousy %></p>
+  <p>New Position: <%= taskData['Y-Motor'] %></p>
+  <p>Task Name: <%= taskData.TaskName %></p>
+  <br>
+
+  <h2 style="background-color: DodgerBlue; padding: 10px; color: white;">For Base-Motor:</h2>
+  <p>Original Position: <%= previous.previousbase %></p>
+  <p>New Position: <%= taskData['Base-Motor'] %></p>
+  <p>Task Name: <%= taskData.TaskName %></p>
+  <br>
+
+  <h2 style="background-color: DodgerBlue; padding: 10px; color: white;">For Arm1-Motor:</h2>
+  <p>Original Position: <%= previous.previousarm1 %></p>
+  <p>New Position: <%= taskData['Arm1-Motor'] %></p>
+  <p>Task Name: <%= taskData.TaskName %></p>
+  <br>
+
+  <h2 style="background-color: DodgerBlue; padding: 10px; color: white;">For Arm2-Motor:</h2>
+  <p>Original Position: <%= previous.previousarm2 %></p>
+  <p>New Position: <%= taskData['Arm2-Motor'] %></p>
+  <p>Task Name: <%= taskData.TaskName %></p>
+  <br>
+
+  <h2 style="background-color: DodgerBlue; padding: 10px; color: white;">For Tool-Motor:</h2>
+  <p>Original Position: <%= previous.previoustool %></p>
+  <p>New Position: <%= taskData['Tool-Motor'] %></p>
+  <p>Task Name: <%= taskData.TaskName %></p>
+  <br>
+
+<% } else { %>
+  <p>No results</p>
+<% } %>
+<a href="/form">Go Back</a>
+</body>
+</html>

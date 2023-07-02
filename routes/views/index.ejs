@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <h2 style="background-color:DodgerBlue;color:white;">Task Creation Form<br></h2>
+    <p>First value should be the absolute value. If not specified, leave it blank.</p>
+    <style>
+        th, td {
+            padding: 5px;
+        }
+        .commaSeparated input[type="submit"] {
+            background-color: DodgerBlue;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            cursor: pointer;
+        }
+    </style>
+    <div class="commaSeparated">
+        <form method="POST" action="/">
+            <table>
+                <tr>
+                    <th>Motor-Name</th>
+                    <th>Moves</th>
+                    <th>Test</th>
+                </tr>
+                <tr>
+                    <td>X-Motor</td>
+                    <td><input type="text" name="X" id="X" value="<%= values.X || '' %>"></td>
+                    <td><button type="submit" name="motor" value="X">X-Motor</button></td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <% if (errors && errors['X']) { %>
+                            <span style="color: red"><%= errors['X'] %></span>
+                        <% } %>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Y-Motor</td>
+                    <td><input type="text" name="Y" id="Y" value="<%= values.Y || '' %>"></td>
+                    <td><button type="submit" name="motor" value="Y">Y-Motor</button></td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <% if (errors && errors['Y']) { %>
+                            <span style="color: red"><%= errors['Y'] %></span>
+                        <% } %>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Base-Motor</td>
+                    <td><input type="text" name="Base" id="Base" value="<%= values.Base || '' %>"></td>
+                    <td><button type="submit" name="motor" value="Base">Base-Motor</button></td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <% if (errors && errors['Base']) { %>
+                            <span style="color: red"><%= errors['Base'] %></span>
+                        <% } %>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Arm1-Motor</td>
+                    <td><input type="text" name="Arm1" id="Arm1" value="<%= values.Arm1 || '' %>"></td>
+                    <td><button type="submit" name="motor" value="Arm1">Arm1-Motor</button></td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <% if (errors && errors['Arm1']) { %>
+                            <span style="color: red"><%= errors['Arm1'] %></span>
+                        <% } %>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Arm2-Motor</td>
+                    <td><input type="text" name="Arm2" id="Arm2" value="<%= values.Arm2 || '' %>"></td>
+                    <td><button type="submit" name="motor" value="Arm2">Arm2-Motor</button></td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <% if (errors && errors['Arm2']) { %>
+                            <span style="color: red"><%= errors['Arm2'] %></span>
+                        <% } %>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Tool-Motor</td>
+                    <td><input type="text" name="Tool" id="Tool" value="<%= values.Tool || '' %>"></td>
+                    <td><button type="submit" name="motor" value="Tool">Tool-Motor</button></td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <% if (errors && errors['Tool']) { %>
+                            <span style="color: red"><%= errors['Tool'] %></span>
+                        <% } %>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Task Name</td>
+                    <td><input type="text" name="TaskName" id="TaskName" value="<%= values.TaskName || '' %>"></td>
+                    <td><button type="submit" value="CreateTask">Task Name</button></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
